@@ -1,0 +1,70 @@
+{% extends 'images/base.html' %}
+{% load bootstrap %}
+{% block content %}
+
+<style xmlns="http://www.w3.org/1999/html">
+
+h4
+{
+  line-height: 2.7;
+  font-size: 1.3em;
+}
+label
+{
+margin-left: 25px;
+margin-top: 5px;
+font-weight: bold;
+}
+
+@media (min-width: 700px)
+{
+input[type=text],input[type=email]
+{
+width:92%
+}
+.btn-custom
+{
+left:280px;
+}
+}
+</style>
+
+<div class = "container">
+  <div class ="row justify-content-md-center">
+        <div class="col-xl-8 col-md-10 col-sm-10">
+  <div class = "panel panel-default">
+      <div class="panel-heading text-center"><h4><b>Image Upload</b></h4></div>
+      <div class="panel-body">
+        <div class="body">
+          <form id="id_avatar" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if messages %}
+             <ul class="messages">
+            {% for message in messages %}
+              <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{ image_form|bootstrap }}
+                    </div>
+                </div>
+            </div>
+
+            <p>
+              <button type="submit" class="btn btn-custom">Submit</button>
+            </p>
+            <br><br>
+          </form>
+        </div>
+      </div>
+    </div>
+        </div></div></div>
+  <br><br><br>
+
+{% endblock %}

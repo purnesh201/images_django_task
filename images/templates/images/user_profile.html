@@ -1,0 +1,68 @@
+{% extends "images/base.html" %}
+{% load bootstrap %}
+{% block content %}
+
+<style>
+h4
+{
+  line-height: 2.7;
+  font-size: 1.3em;
+}
+label
+{
+margin-left: 25px;
+margin-top: 5px;
+font-weight: bold;
+}
+img.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.btn-custom
+{
+margin-left:-200px;
+}
+</style>
+
+    <div class ="row justify-content-md-center">
+        <div class="col-xl-8 col-md-10 col-sm-10">
+            <div class = "panel panel-default">
+                <div class="panel-heading text-center"><h4><b>My Profile</b></h4></div>
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6 text-right">
+                        <label> User Name &nbsp; &nbsp; &nbsp; &nbsp; : </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label> {{user.username}} </label>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <label> First Name &nbsp; &nbsp; &nbsp; &nbsp; : </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label> {{user.first_name}} </label>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <label> Last Name &nbsp; &nbsp; &nbsp; &nbsp; : </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label> {{user.last_name}} </label>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <label> Email &nbsp; &nbsp; &nbsp; &nbsp; : </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label> {{user.email}} </label>
+                    </div>
+                    <br>
+                </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+   </div>
+<br><br><br>
+
+{% endblock %}
